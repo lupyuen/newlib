@@ -8,6 +8,10 @@
     },
     "description": "Stub for compiling newlib under PlatformIO",
     "build": {        
+        "unflags": [
+            "-fno-rtti",
+            "-fno-threadsafe-statics"
+        ],
         "flags": [
             "-D PREFER_SIZE_OVER_SPEED",
             "-I include",
