@@ -1,0 +1,18 @@
+{
+    "name": "newlib",
+    "frameworks": "",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lupyuen/newlib"
+    },
+    "description": "Stub for compiling newlib under PlatformIO",
+    "build": {        
+        "flags": [
+            "-Izzzinc -Izzzinc/core"
+        ],
+        "srcFilter": [
+            "+<zzzinc/*>",
+            "+<zzzsource/*>"
+        ]
+    }
+}
