@@ -1,6 +1,7 @@
 {
     "name": "newlib",
-    "frameworks": "",
+    "frameworks": "*",
+    "platforms": "ststm32",
     "repository": {
         "type": "git",
         "url": "https://github.com/lupyuen/newlib"
@@ -8,11 +9,15 @@
     "description": "Stub for compiling newlib under PlatformIO",
     "build": {        
         "flags": [
-            "-Izzzinc -Izzzinc/core"
+            "-D PREFER_SIZE_OVER_SPEED",
+            "-I include",
+            "-I newlib/libc/ctype"
         ],
         "srcFilter": [
-            "+<zzzinc/*>",
-            "+<zzzsource/*>"
+            "+<include/newlib-force.h>",
+            "+<newlib/libc/include/*.h>",
+            "+<newlib/libc/ctype/*.[ch]>",
+            "+<newlib/libc/string/*.[ch]>"
         ]
     }
 }
