@@ -15,6 +15,7 @@
         "flags": [
             "-D PREFER_SIZE_OVER_SPEED",
             "-I include",
+            "-I newlib/libc/include",
             "-I newlib/libc/ctype",
             "-I newlib/libm/common"
         ],
