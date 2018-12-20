@@ -15,7 +15,7 @@
         "flags": [
             "-D PREFER_SIZE_OVER_SPEED",
             "-I include",
-            "-I zzznewlib/libc/include",
+            "-I NOTUSEDnewlib/libc/include",
             "-I newlib/libc/ctype",
             "-I newlib/libm/common"
         ],
@@ -64,7 +64,7 @@
             "+<newlib/libc/string/strcspn.c>",
             "+<newlib/libc/string/strdup.c>",
             "+<newlib/libc/string/strdup_r.c>",
-            "+<newlib/libc/string/strerror.c>",
+            "+<NOTUSEDnewlib/libc/string/strerror.c>",
             "+<newlib/libc/string/strerror_r.c>",
             "+<newlib/libc/string/strlcat.c>",
             "+<newlib/libc/string/strlcpy.c>",
