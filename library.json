@@ -11,13 +11,16 @@
         "flags": [
             "-D PREFER_SIZE_OVER_SPEED",
             "-I include",
-            "-I newlib/libc/ctype"
+            "-I newlib/libc/ctype",
+            "-I newlib/libm/common"
         ],
         "srcFilter": [
             "+<include/newlib-force.h>",
             "+<newlib/libc/include/*.h>",
             "+<newlib/libc/ctype/*.[ch]>",
-            "+<newlib/libc/string/*.[ch]>"
+            "+<newlib/libc/string/*.[ch]>",
+            "+<newlib/libm/common/*.[ch]>",
+            "+<newlib/libm/math/*.[ch]>"
         ]
     }
 }
