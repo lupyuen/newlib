@@ -52,9 +52,6 @@ execute_process(
 set(
     TOP_LEVEL_INCLUDE_DIRS
     "${NEWLIB_DIR}/include"
-    # "${NEWLIB_DIR}/newlib/libc/include"
-    # "${NEWLIB_CTYPE_DIR}"
-    # "${NEWLIB_LIBM_COMMON_DIR}"
 )
 
 RECURSIVE_FIND_FILE(NEWLIB_SRC "${NEWLIB_LIB}" "*.o")
@@ -63,12 +60,6 @@ set(
     TOP_LEVEL_SOURCE_FILES
     "${NEWLIB_DIR}/scripts/dummy.c"
     ${NEWLIB_SRC}
-    # "${NEWLIB_LIB}/libc/libthumb_v7_m/libc.a"
-    # "${NEWLIB_LIB}/libm/libthumb_v7_m/libm.a"
-    # ${NEWLIB_CTYPE}
-    # ${NEWLIB_STRING}
-    # ${NEWLIB_LIBM_COMMON}
-    # ${NEWLIB_LIBM_MATH}
 )
 
 # create newlib target.
