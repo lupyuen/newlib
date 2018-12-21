@@ -32,15 +32,17 @@ set(
     # "${NEWLIB_LIBM_COMMON_DIR}"
 )
 
-set(
-    TOP_LEVEL_SOURCE_FILES
-    "${NEWLIB_LIB}/libc/libthumb_v7_m/libc.a"
-    "${NEWLIB_LIB}/libm/libthumb_v7_m/libm.a"
-    # ${NEWLIB_CTYPE}
-    # ${NEWLIB_STRING}
-    # ${NEWLIB_LIBM_COMMON}
-    # ${NEWLIB_LIBM_MATH}
-)
+RECURSIVE_FIND_FILE(TOP_LEVEL_SOURCE_FILES "${NEWLIB_LIB}" "*.o")
+
+# set(
+#     TOP_LEVEL_SOURCE_FILES
+#     "${NEWLIB_LIB}/libc/libthumb_v7_m/libc.a"
+#     "${NEWLIB_LIB}/libm/libthumb_v7_m/libm.a"
+#     # ${NEWLIB_CTYPE}
+#     # ${NEWLIB_STRING}
+#     # ${NEWLIB_LIBM_COMMON}
+#     # ${NEWLIB_LIBM_MATH}
+# )
 
 # create newlib target.
 add_library(newlib ${TOP_LEVEL_SOURCE_FILES})
