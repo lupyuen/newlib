@@ -105,7 +105,7 @@ set(
 
 # create newlib target.
 add_library(newlib ${TOP_LEVEL_SOURCE_FILES})
-message("TOP_LEVEL_SOURCE_FILES: ${TOP_LEVEL_SOURCE_FILES}")
+# message("TOP_LEVEL_SOURCE_FILES: ${TOP_LEVEL_SOURCE_FILES}")
 
 ###############################################################################
 # global settings
@@ -113,7 +113,7 @@ message("TOP_LEVEL_SOURCE_FILES: ${TOP_LEVEL_SOURCE_FILES}")
 string(TOLOWER "${CODAL_TARGET_PROCESSOR}" TARGET_PROCESSOR)
 
 # exclude standard C includes
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nostdinc")
+# set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nostdinc")
 
 # include directories
 include_directories(    
