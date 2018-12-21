@@ -32,13 +32,14 @@ set(
     # "${NEWLIB_LIBM_COMMON_DIR}"
 )
 
-# RECURSIVE_FIND_FILE(TOP_LEVEL_SOURCE_FILES "${NEWLIB_LIB}" "*.o")
+RECURSIVE_FIND_FILE(NEWLIB_SRC "${NEWLIB_LIB}" "*.o")
 
 set(
     TOP_LEVEL_SOURCE_FILES
     "${NEWLIB_DIR}/scripts/dummy.c"
-    "${NEWLIB_LIB}/libc/libthumb_v7_m/libc.a"
-    "${NEWLIB_LIB}/libm/libthumb_v7_m/libm.a"
+    ${NEWLIB_SRC}
+    # "${NEWLIB_LIB}/libc/libthumb_v7_m/libc.a"
+    # "${NEWLIB_LIB}/libm/libthumb_v7_m/libm.a"
     # ${NEWLIB_CTYPE}
     # ${NEWLIB_STRING}
     # ${NEWLIB_LIBM_COMMON}
