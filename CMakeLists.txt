@@ -114,7 +114,7 @@ string(TOLOWER "${CODAL_TARGET_PROCESSOR}" TARGET_PROCESSOR)
 
 # exclude standard C includes
 # set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nostdinc")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nostdinc -DPREFER_SIZE_OVER_SPEED -D_LDBL_EQ_DBL")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -H -dI -DPREFER_SIZE_OVER_SPEED -D_LDBL_EQ_DBL")
 
 # include directories
 include_directories(    
