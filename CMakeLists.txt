@@ -113,11 +113,9 @@ add_library(newlib ${TOP_LEVEL_SOURCE_FILES})
 string(TOLOWER "${CODAL_TARGET_PROCESSOR}" TARGET_PROCESSOR)
 
 # exclude standard C includes
-# set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nostdinc")
 set(
     CMAKE_C_FLAGS 
-    # TODO
-    "${CMAKE_C_FLAGS} -nostdinc -H -dI -DPREFER_SIZE_OVER_SPEED -D_LDBL_EQ_DBL -I/usr/local/Cellar/arm-none-eabi-gcc/7-2018-q2-update/gcc/arm-none-eabi/include -I/usr/local/Cellar/arm-none-eabi-gcc/7-2018-q2-update/gcc/lib/gcc/arm-none-eabi/7.3.1/include"
+    "${CMAKE_C_FLAGS} -nostdinc -H -dI -DPREFER_SIZE_OVER_SPEED -D_LDBL_EQ_DBL"
 )
 
 # include directories
@@ -126,6 +124,8 @@ include_directories(
     ${TOP_LEVEL_INCLUDE_DIRS}
     ${LIB_DIR}
     # TODO
+    "/usr/local/Cellar/arm-none-eabi-gcc/7-2018-q2-update/gcc/arm-none-eabi/include"
+    "/usr/local/Cellar/arm-none-eabi-gcc/7-2018-q2-update/gcc/lib/gcc/arm-none-eabi/7.3.1/include"
     "/usr/local/Cellar/arm-none-eabi-gcc/7-2018-q2-update/gcc/lib/gcc/arm-none-eabi/7.3.1/include-fixed/"
 )
 
