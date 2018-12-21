@@ -1,0 +1,231 @@
+Build started at 2018-12-21T22:08:58.068880
+Main binary: /usr/local/bin/python3.6
+Python system: Darwin
+The Meson build system
+Version: 0.49.0
+Source dir: /Users/Luppy/newlib
+Build dir: /Users/Luppy/newlib/build-arm-none-eabi
+Build type: cross build
+WARNING: Unknown options: "newlib-reentrant-small"
+Project name: newlib-nano
+Project version: 2.10.0
+Sanity testing C compiler: cc
+Is cross compiler: False.
+Sanity check compiler command line: cc /Users/Luppy/newlib/build-arm-none-eabi/meson-private/sanitycheckc.c -o /Users/Luppy/newlib/build-arm-none-eabi/meson-private/sanitycheckc.exe
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /Users/Luppy/newlib/build-arm-none-eabi/meson-private/sanitycheckc.exe
+Sanity testing C compiler: arm-none-eabi-gcc
+Is cross compiler: True.
+Sanity check compiler command line: arm-none-eabi-gcc -c /Users/Luppy/newlib/build-arm-none-eabi/meson-private/sanitycheckc.c -o /Users/Luppy/newlib/build-arm-none-eabi/meson-private/sanitycheckc_cross.exe
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Native C compiler: cc (clang 10.0.0 "Apple LLVM version 10.0.0 (clang-1000.11.45.5)")
+Cross C compiler: arm-none-eabi-gcc (gcc 7.3.1)
+Host machine cpu family: 
+Host machine cpu: 
+Target machine cpu family: 
+Target machine cpu: 
+Build machine cpu family: x86_64
+Build machine cpu: x86_64
+Running command: /usr/local/bin/arm-none-eabi-gcc -dumpmachine
+--- stdout ---
+arm-none-eabi
+
+--- stderr ---
+
+
+Message: Computed host_cpu as arm
+Running compile:
+Working directory:  /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmp58ddaaxl
+Command line:  arm-none-eabi-gcc /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmp58ddaaxl/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -c -o /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmp58ddaaxl/output.obj -O0 -Werror 
+
+Code:
+ 
+        int foo(void) { return 0; }
+        int bar(void) __attribute__((alias("foo")));
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports function attribute alias: YES
+Running compile:
+Working directory:  /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmpghd09u30
+Command line:  arm-none-eabi-gcc /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmpghd09u30/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -c -o /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmpghd09u30/output.obj -O0 -std=gnu99 
+
+Code:
+ 
+#include <float.h>
+#ifndef LDBL_MANT_DIG
+#error No long double support in float.h
+#endif
+long double test()
+{
+	long double ld = 0.0L;
+	 return ld;
+}
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Checking if "long double check" compiles: YES
+Running command: /usr/local/bin/arm-none-eabi-gcc --print-multi-lib
+--- stdout ---
+.;
+thumb;@mthumb
+hard;@mfloat-abi=hard
+thumb/v6-m;@mthumb@march=armv6s-m
+thumb/v7-m;@mthumb@march=armv7-m
+thumb/v7e-m;@mthumb@march=armv7e-m
+thumb/v7-ar;@mthumb@march=armv7
+thumb/v8-m.base;@mthumb@march=armv8-m.base
+thumb/v8-m.main;@mthumb@march=armv8-m.main
+thumb/v7e-m/fpv4-sp/softfp;@mthumb@march=armv7e-m@mfpu=fpv4-sp-d16@mfloat-abi=softfp
+thumb/v7e-m/fpv4-sp/hard;@mthumb@march=armv7e-m@mfpu=fpv4-sp-d16@mfloat-abi=hard
+thumb/v7e-m/fpv5/softfp;@mthumb@march=armv7e-m@mfpu=fpv5-d16@mfloat-abi=softfp
+thumb/v7e-m/fpv5/hard;@mthumb@march=armv7e-m@mfpu=fpv5-d16@mfloat-abi=hard
+thumb/v7-ar/fpv3/softfp;@mthumb@march=armv7@mfpu=vfpv3-d16@mfloat-abi=softfp
+thumb/v7-ar/fpv3/hard;@mthumb@march=armv7@mfpu=vfpv3-d16@mfloat-abi=hard
+thumb/v8-m.main/fpv5-sp/softfp;@mthumb@march=armv8-m.main@mfpu=fpv5-sp-d16@mfloat-abi=softfp
+thumb/v8-m.main/fpv5-sp/hard;@mthumb@march=armv8-m.main@mfpu=fpv5-sp-d16@mfloat-abi=hard
+thumb/v8-m.main/fpv5/softfp;@mthumb@march=armv8-m.main@mfpu=fpv5-d16@mfloat-abi=softfp
+thumb/v8-m.main/fpv5/hard;@mthumb@march=armv8-m.main@mfpu=fpv5-d16@mfloat-abi=hard
+
+--- stderr ---
+
+
+Running compile:
+Working directory:  /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmprpq6l0a8
+Command line:  arm-none-eabi-gcc /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmprpq6l0a8/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -c -o /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmprpq6l0a8/output.obj -O0 -fno-tree-loop-distribute-patterns 
+
+Code:
+ int i;
+
+Compiler stdout:
+ 
+Compiler stderr:
+ 
+Compiler for C supports arguments -fno-tree-loop-distribute-patterns: YES
+Configuring newlib.h using configuration
+Configuring _newlib_version.h using configuration
+WARNING: Target "thumb/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "hard/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v6_m/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7_m/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7e_m/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7_ar/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v8_m_base/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v8_m_main/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7e_m_fpv4_sp_softfp/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7e_m_fpv4_sp_hard/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7e_m_fpv5_softfp/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7e_m_fpv5_hard/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7_ar_fpv3_softfp/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7_ar_fpv3_hard/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v8_m_main_fpv5_sp_softfp/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v8_m_main_fpv5_sp_hard/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v8_m_main_fpv5_softfp/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v8_m_main_fpv5_hard/libc" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "hard/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v6_m/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7_m/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7e_m/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7_ar/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v8_m_base/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v8_m_main/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7e_m_fpv4_sp_softfp/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7e_m_fpv4_sp_hard/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7e_m_fpv5_softfp/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7e_m_fpv5_hard/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7_ar_fpv3_softfp/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v7_ar_fpv3_hard/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v8_m_main_fpv5_sp_softfp/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v8_m_main_fpv5_sp_hard/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v8_m_main_fpv5_softfp/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+WARNING: Target "thumb_v8_m_main_fpv5_hard/libm" has a path separator in its name.
+This is not supported, it can cause unexpected failures and will become
+a hard error in the future.
+Build targets in project: 399
+Option buildtype is: plain [default: debugoptimized]
+Found ninja-1.8.2 at /usr/local/bin/ninja
+WARNING: Cross file does not specify strip binary, result will not be stripped.

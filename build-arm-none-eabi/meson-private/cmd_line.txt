@@ -1,0 +1,16 @@
+[options]
+target-optspace = true
+newlib-tinystdio = true
+newlib-supplied-syscalls = false
+newlib-reentrant-small = true
+newlib-wide-orient = false
+newlib-nano-malloc = true
+lite-exit = true
+newlib-global-atexit = true
+includedir = lib/newlib-nano/arm-none-eabi/include
+libdir = lib/newlib-nano/arm-none-eabi/lib
+buildtype = plain
+
+[properties]
+cross_file = ../cross-arm-none-eabi.txt
+
