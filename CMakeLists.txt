@@ -1,7 +1,13 @@
 # Build newlib with smallest size for Cortex-M3.  This script must be run at the top level e.g. ./scripts/build.sh.
-# To check output: ar -t build/libnewlib.a
-set(CMAKE_VERBOSE_MAKEFILE ON)
+# Warning: ALl builds will use newlib libc and libm instead of standard C libraries. To check output: ar -t build/libnewlib.a
 project(newlib)
+
+# enable verbose log. Must be after project()
+set(CMAKE_VERBOSE_MAKEFILE ON)
+set(ENV{VERBOSE} "1")
+message("VERBOSE: $ENV{VERBOSE}")
+
+# apply codal build settings
 include("${CODAL_UTILS_LOCATION}")
 
 ###############################################################################
