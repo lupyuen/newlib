@@ -6,7 +6,7 @@ ARCH=arm-none-eabi
 DIR=..
 echo "meson dir: ${DIR}"
     
-if [ ( -f build-arm-none-eabi/newlib/libc/libthumb_v7_m/libc.a ) -a ( -f build-arm-none-eabi/newlib/libm/libthumb_v7_m/libm.a ) ]; then
+if [ -f build-arm-none-eabi/newlib/libc/libthumb_v7_m/libc.a -a -f build-arm-none-eabi/newlib/libm/libthumb_v7_m/libm.a ]; then
     echo Already built, quitting
     exit
 fi
