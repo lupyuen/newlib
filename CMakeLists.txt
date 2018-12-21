@@ -36,7 +36,7 @@ set(
 
 set(
     TOP_LEVEL_SOURCE_FILES
-    "${NEWLIB_DIR}/build/dummy.c"
+    "${NEWLIB_DIR}/scripts/dummy.c"
     "${NEWLIB_LIB}/libc/libthumb_v7_m/libc.a"
     "${NEWLIB_LIB}/libm/libthumb_v7_m/libm.a"
     # ${NEWLIB_CTYPE}
