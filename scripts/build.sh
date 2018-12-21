@@ -2,7 +2,8 @@
 # Build newlib with smallest size for Cortex-M3.  This script must be run at the top level e.g. ./scripts/build.sh.
 
 ARCH=arm-none-eabi
-DIR=`dirname $0`/..
+# DIR=`dirname $0`/..
+DIR=.
 echo "meson dir: ${DIR}"
 
 echo rm -rf build-arm-none-eabi
