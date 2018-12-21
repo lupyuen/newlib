@@ -95,7 +95,6 @@ set(
     "${NEWLIB_STRING_DIR}/timingsafe_memcmp.c"
 )
 
-# create newlib target.
 set(
     TOP_LEVEL_SOURCE_FILES
     ${NEWLIB_CTYPE}
@@ -103,6 +102,10 @@ set(
     ${NEWLIB_LIBM_COMMON}
     ${NEWLIB_LIBM_MATH}
 )
+
+# create newlib target.
+add_library(newlib ${TOP_LEVEL_SOURCE_FILES})
+message("TOP_LEVEL_SOURCE_FILES: ${TOP_LEVEL_SOURCE_FILES}")
 
 ###############################################################################
 # global settings
