@@ -3,7 +3,7 @@
 
 ARCH=arm-none-eabi
 # DIR=`dirname $0`/..
-DIR=.
+DIR=..
 echo "meson dir: ${DIR}"
 
 echo rm -rf build-arm-none-eabi
