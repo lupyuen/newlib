@@ -6,6 +6,13 @@ ARCH=arm-none-eabi
 DIR=..
 echo "meson dir: ${DIR}"
     
+# Enable verbose build for cmake in docker.
+if [ -d /home/build ]; then
+    echo Setting VERBOSE=1 in /home/build/.profile and .bashrc
+    echo export VERBOSE=1 >> /home/build/.profile
+    echo export VERBOSE=1 >> /home/build/.bashrc
+fi
+
 if [ -f build-arm-none-eabi/newlib/libc/libthumb_v7_m/libc.a -a -f build-arm-none-eabi/newlib/libm/libthumb_v7_m/libm.a ]; then
     echo Already built, quitting
     exit
@@ -57,13 +64,6 @@ if [ ! -d build-arm-none-eabi ]; then
     ########################
     exit
 
-fi
-
-# TODO: Enable verbose build for cmake in docker.
-if [ -d /home/build ]; then
-    echo Setting VERBOSE=1 in /home/build/.profile and .bashrc
-    echo export VERBOSE=1 >> /home/build/.profile
-    echo export VERBOSE=1 >> /home/build/.bashrc
 fi
 
 echo cd build-arm-none-eabi
