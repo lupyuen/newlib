@@ -48,7 +48,7 @@ set(
 
 # create newlib target.
 add_library(newlib ${TOP_LEVEL_SOURCE_FILES})
-message("TOP_LEVEL_SOURCE_FILES: ${TOP_LEVEL_SOURCE_FILES}")
+# message("TOP_LEVEL_SOURCE_FILES: ${TOP_LEVEL_SOURCE_FILES}")
 
 ###############################################################################
 # global settings
