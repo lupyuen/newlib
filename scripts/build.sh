@@ -11,6 +11,7 @@ if [ -f build-arm-none-eabi/newlib/libc/libthumb_v7_m/libc.a -a -f build-arm-non
     exit
 fi
 
+# Delete the build folder.
 # echo rm -rf build-arm-none-eabi
 # rm -rf build-arm-none-eabi
 
@@ -57,6 +58,10 @@ if [ ! -d build-arm-none-eabi ]; then
     exit
 
 fi
+
+# TODO
+echo export VERBOSE=1 >> /home/build/.profile
+echo export VERBOSE=1 >> /home/build/.bashrc
 
 echo cd build-arm-none-eabi
 cd build-arm-none-eabi
