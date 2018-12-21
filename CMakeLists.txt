@@ -114,7 +114,16 @@ string(TOLOWER "${CODAL_TARGET_PROCESSOR}" TARGET_PROCESSOR)
 
 # exclude standard C includes
 # set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nostdinc")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -H -dI -DPREFER_SIZE_OVER_SPEED -D_LDBL_EQ_DBL")
+set(CMAKE_C_FLAGS 
+    "${CMAKE_C_FLAGS}"
+    "-nostdinc"
+    "-H"
+    "-dI"
+    "-DPREFER_SIZE_OVER_SPEED"
+    "-D_LDBL_EQ_DBL"
+    # TODO
+    "-I/usr/local/Cellar/arm-none-eabi-gcc/7-2018-q2-update/gcc/arm-none-eabi/include"
+)
 
 # include directories
 include_directories(    
