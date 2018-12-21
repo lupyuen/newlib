@@ -1,6 +1,7 @@
 #!/bin/sh
 ARCH=arm-none-eabi
-DIR=`dirname $0`
+DIR=`dirname $0`/..
+echo "DIR=${DIR}"
 meson $DIR \
     -Dtarget-optspace=true \
     -Dnewlib-tinystdio=true \
