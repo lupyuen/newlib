@@ -14,7 +14,9 @@ message("CMAKE_CXX_LINK_EXECUTABLE before: ${CMAKE_CXX_LINK_EXECUTABLE}")
 string(REPLACE " -lm "   " " CMAKE_CXX_LINK_EXECUTABLE ${CMAKE_CXX_LINK_EXECUTABLE})
 string(REPLACE " -lc "   " " CMAKE_CXX_LINK_EXECUTABLE ${CMAKE_CXX_LINK_EXECUTABLE})
 string(REPLACE " -lgcc " " " CMAKE_CXX_LINK_EXECUTABLE ${CMAKE_CXX_LINK_EXECUTABLE})
-set(CMAKE_CXX_LINK_EXECUTABLE "${CMAKE_CXX_LINK_EXECUTABLE}" PARENT_SCOPE)
+
+# exclude standard C libraries. We will use newlib.
+set(CMAKE_CXX_LINK_EXECUTABLE "${CMAKE_CXX_LINK_EXECUTABLE} -nostdlib" PARENT_SCOPE)
 message("CMAKE_CXX_LINK_EXECUTABLE after: ${CMAKE_CXX_LINK_EXECUTABLE}")
 
 ###############################################################################
