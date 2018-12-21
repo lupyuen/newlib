@@ -117,7 +117,7 @@ string(TOLOWER "${CODAL_TARGET_PROCESSOR}" TARGET_PROCESSOR)
 set(
     CMAKE_C_FLAGS 
     # TODO
-    "${CMAKE_C_FLAGS} -nostdinc -H -dI -DPREFER_SIZE_OVER_SPEED -D_LDBL_EQ_DBL -I/usr/local/Cellar/arm-none-eabi-gcc/7-2018-q2-update/gcc/arm-none-eabi/include -I/usr/local/Cellar/arm-none-eabi-gcc/7-2018-q2-update/gcc/lib/gcc/arm-none-eabi/7.3.1/include"
+    "${CMAKE_C_FLAGS} -zzznostdinc -H -dI -DPREFER_SIZE_OVER_SPEED -D_LDBL_EQ_DBL -I/usr/local/Cellar/arm-none-eabi-gcc/7-2018-q2-update/gcc/arm-none-eabi/include -I/usr/local/Cellar/arm-none-eabi-gcc/7-2018-q2-update/gcc/lib/gcc/arm-none-eabi/7.3.1/include"
 )
 
 # include directories
