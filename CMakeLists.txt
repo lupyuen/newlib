@@ -11,7 +11,7 @@ set(NEWLIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 message("NEWLIB_DIR: ${NEWLIB_DIR}")
 
 # built library will be generated here
-set (NEWLIB_LIB "${NEWLIB_DIR}/build-arm-none-eabi/newlib/libm/libthumb_v7_m")
+set (NEWLIB_LIB "${NEWLIB_DIR}/build-arm-none-eabi/newlib")
 
 # build the library
 execute_process(
@@ -34,8 +34,8 @@ set(
 
 set(
     TOP_LEVEL_SOURCE_FILES
-    "${NEWLIB_LIB}/libc.a"
-    "${NEWLIB_LIB}/libm.a"
+    "${NEWLIB_LIB}/libc/libthumb_v7_m/libc.a"
+    "${NEWLIB_LIB}/libm/libthumb_v7_m/libm.a"
     # ${NEWLIB_CTYPE}
     # ${NEWLIB_STRING}
     # ${NEWLIB_LIBM_COMMON}
