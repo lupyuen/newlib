@@ -5,6 +5,20 @@ This is a fork of newlib which integrates the stdio code from gcc-avr
 to make it much smaller for tiny embedded systems. There's debian
 packaging which builds for arm-none-eabi targets.
 
+### About github.com/lupyuen/newlib
+
+This fork `github.com/lupyuen/newlib` was created to allow building under PlatformIO and with CODAL to support MakeCode for STM32 Blue Pill. See https://github.com/lupyuen/codal-libopencm3 
+
+The files and folders added in this fork:
+
+1. `library.json` for PlatformIO support
+
+1. `scripts` folder for CODAL build
+
+1. `build-arm-none-eabi` folder for CODAL build
+
+1. `include/newlib-force.h` to force newlib to be linked
+
 ### Selecting newlib options
 
 I've tried to expose all of the same code selection options that are
