@@ -4,11 +4,23 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 project(newlib)
 include("${CODAL_UTILS_LOCATION}")
 
-# CMAKE_CURRENT_SOURCE_DIR is codal/libraries/newlib
+###############################################################################
+# Warning: CMAKE_CXX_LINK_EXECUTABLE is changed globally here
+
+# From https://github.com/lancaster-university/codal/blob/master/utils/cmake/toolchains/ARM_GCC/compiler-flags.cmake
+# set(CMAKE_CXX_LINK_EXECUTABLE       "<CMAKE_CXX_COMPILER> <CMAKE_CXX_LINK_FLAGS> <LINK_FLAGS> -Wl,-Map,<TARGET>.map -Wl,--start-group <OBJECTS> <LINK_LIBRARIES> -lnosys -lstdc++ -lsupc++ -lm -lc -lgcc -lstdc++ -lsupc++ -lm -lc -lgcc -Wl,--end-group  --specs=nano.specs -o <TARGET>")
+# We remove both instances of -lm -lc -lgcc
+message("CMAKE_CXX_LINK_EXECUTABLE before: ${CMAKE_CXX_LINK_EXECUTABLE}")
+string(REPLACE " -lm "   " " CMAKE_CXX_LINK_EXECUTABLE ${CMAKE_CXX_LINK_EXECUTABLE})
+string(REPLACE " -lc "   " " CMAKE_CXX_LINK_EXECUTABLE ${CMAKE_CXX_LINK_EXECUTABLE})
+string(REPLACE " -lgcc " " " CMAKE_CXX_LINK_EXECUTABLE ${CMAKE_CXX_LINK_EXECUTABLE})
+set(CMAKE_CXX_LINK_EXECUTABLE "${CMAKE_CXX_LINK_EXECUTABLE}" PARENT_SCOPE)
+message("CMAKE_CXX_LINK_EXECUTABLE after: ${CMAKE_CXX_LINK_EXECUTABLE}")
 
 ###############################################################################
 # newlib
 
+# CMAKE_CURRENT_SOURCE_DIR is codal/libraries/newlib
 set(NEWLIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 message("NEWLIB_DIR: ${NEWLIB_DIR}")
 
