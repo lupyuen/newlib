@@ -116,10 +116,5 @@ include_directories(
     ${LIB_DIR}
 )
 
-# libraries to be built
-target_link_libraries(
-    newlib
-)
-
 # expose it to parent cmake.
-# target_include_directories(newlib PUBLIC ${TOP_LEVEL_INCLUDE_DIRS})
+# target_include_directories(newlib PUBLIC "${NEWLIB_DIR}/include")

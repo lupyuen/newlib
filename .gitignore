@@ -42,3 +42,5 @@ core
 !core/
 
 lost+found
+build
+
