@@ -51,4 +51,7 @@ ninja \
     newlib/libc/libthumb_v7_m/libc.a \
     newlib/libm/libthumb_v7_m/libm.a
 
+echo ls -l newlib/libc/libthumb_v7_m
+ls -l newlib/libc/libthumb_v7_m
+echo ls -l newlib/libm/libthumb_v7_m
 ls -l newlib/libm/libthumb_v7_m
