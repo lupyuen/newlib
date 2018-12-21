@@ -48,13 +48,16 @@ execute_process(
     COMMAND "./scripts/build.sh"
 )
 
-# find newlib sources and headers.
+# find newlib headers.
 set(
     TOP_LEVEL_INCLUDE_DIRS
     "${NEWLIB_DIR}/include"
 )
 
-RECURSIVE_FIND_FILE(NEWLIB_SRC "${NEWLIB_LIB}" "*.o")
+# uncomment to build libc and libm
+# RECURSIVE_FIND_FILE(NEWLIB_SRC "${NEWLIB_LIB}" "*.o")
+# uncomment to build libc only
+RECURSIVE_FIND_FILE(NEWLIB_SRC "${NEWLIB_LIB}/libc" "*.o")
 
 set(
     TOP_LEVEL_SOURCE_FILES

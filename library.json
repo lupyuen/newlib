@@ -24,8 +24,8 @@
             "+<include/newlib-force.h>",
             "+<newlib/libc/include/*.h>",
 
-            "+<newlib/libm/common/*.[ch]>",
-            "+<newlib/libm/math/*.[ch]>",
+            "+<NOTUSEDnewlib/libm/common/*.[ch]>",
+            "+<NOTUSEDnewlib/libm/math/*.[ch]>",
 
             "+<newlib/libc/ctype/ctype_.c>",
             "+<newlib/libc/ctype/isalnum.c>",
