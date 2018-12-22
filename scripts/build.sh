@@ -34,27 +34,27 @@ if [ ! -d build-arm-none-eabi ]; then
 
     # Configure the build. Select minimal options.
     echo meson $DIR \
-        -Dtarget-optspace=true \
-        -Dnewlib-tinystdio=true \
+         -Dtarget-optspace=true \
+        -Dnewlib-tinystdio=false \
         -Dnewlib-supplied-syscalls=false \
-        -Dnewlib-reentrant-small=true\
-        -Dnewlib-wide-orient=false\
-        -Dnewlib-nano-malloc=true\
-        -Dlite-exit=true\
-        -Dnewlib-global-atexit=true\
+        -Dnewlib-reent-small=false \
+        -Dnewlib-wide-orient=false \
+        -Dnewlib-nano-malloc=false \
+        -Dlite-exit=true \
+        -Dnewlib-global-atexit=false \
         -Dincludedir=lib/newlib-nano/$ARCH/include \
         -Dlibdir=lib/newlib-nano/$ARCH/lib \
         --cross-file $DIR/cross-$ARCH.txt \
         --buildtype plain
     meson $DIR \
         -Dtarget-optspace=true \
-        -Dnewlib-tinystdio=true \
+        -Dnewlib-tinystdio=false \
         -Dnewlib-supplied-syscalls=false \
-        -Dnewlib-reentrant-small=true\
-        -Dnewlib-wide-orient=false\
-        -Dnewlib-nano-malloc=true\
-        -Dlite-exit=true\
-        -Dnewlib-global-atexit=true\
+        -Dnewlib-reent-small=false \
+        -Dnewlib-wide-orient=false \
+        -Dnewlib-nano-malloc=false \
+        -Dlite-exit=true \
+        -Dnewlib-global-atexit=false \
         -Dincludedir=lib/newlib-nano/$ARCH/include \
         -Dlibdir=lib/newlib-nano/$ARCH/lib \
         --cross-file $DIR/cross-$ARCH.txt \

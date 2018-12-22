@@ -1,12 +1,12 @@
 [options]
 target-optspace = true
-newlib-tinystdio = true
+newlib-tinystdio = false
 newlib-supplied-syscalls = false
-newlib-reentrant-small = true
+newlib-reent-small = false
 newlib-wide-orient = false
-newlib-nano-malloc = true
+newlib-nano-malloc = false
 lite-exit = true
-newlib-global-atexit = true
+newlib-global-atexit = false
 includedir = lib/newlib-nano/arm-none-eabi/include
 libdir = lib/newlib-nano/arm-none-eabi/lib
 buildtype = plain

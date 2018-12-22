@@ -23,7 +23,7 @@
 #undef REENTRANT_SYSCALLS_PROVIDED
 
 /* Use tiny stdio from gcc avr */
-#define TINY_STDIO
+#undef TINY_STDIO
 
 #undef _ATEXIT_DYNAMIC_ALLOC
 
@@ -49,9 +49,9 @@
 
 #undef _NANO_FORMATTED_IO
 
-#define _NANO_MALLOC
+#undef _NANO_MALLOC
 
-#define _REENT_GLOBAL_ATEXIT
+#undef _REENT_GLOBAL_ATEXIT
 
 #undef _RETARGETABLE_LOCKING
 
@@ -76,7 +76,7 @@
 #undef _WIDE_ORIENT
 
 /* Use tiny stdio FILE */
-#define __CUSTOM_FILE_IO__
+#undef __CUSTOM_FILE_IO__
 
 /* extended locale support */
 #undef __HAVE_LOCALE_INFO_EXTENDED__

@@ -1,27 +1,26 @@
-Build started at 2018-12-21T22:08:58.068880
+Build started at 2018-12-22T11:17:17.985582
 Main binary: /usr/local/bin/python3.6
 Python system: Darwin
 The Meson build system
 Version: 0.49.0
-Source dir: /Users/Luppy/newlib
-Build dir: /Users/Luppy/newlib/build-arm-none-eabi
+Source dir: /Users/Luppy/codal-libopencm3/lib/newlib
+Build dir: /Users/Luppy/codal-libopencm3/lib/newlib/build-arm-none-eabi
 Build type: cross build
-WARNING: Unknown options: "newlib-reentrant-small"
 Project name: newlib-nano
 Project version: 2.10.0
 Sanity testing C compiler: cc
 Is cross compiler: False.
-Sanity check compiler command line: cc /Users/Luppy/newlib/build-arm-none-eabi/meson-private/sanitycheckc.c -o /Users/Luppy/newlib/build-arm-none-eabi/meson-private/sanitycheckc.exe
+Sanity check compiler command line: cc /Users/Luppy/codal-libopencm3/lib/newlib/build-arm-none-eabi/meson-private/sanitycheckc.c -o /Users/Luppy/codal-libopencm3/lib/newlib/build-arm-none-eabi/meson-private/sanitycheckc.exe
 Sanity check compile stdout:
 
 -----
 Sanity check compile stderr:
 
 -----
-Running test binary command: /Users/Luppy/newlib/build-arm-none-eabi/meson-private/sanitycheckc.exe
+Running test binary command: /Users/Luppy/codal-libopencm3/lib/newlib/build-arm-none-eabi/meson-private/sanitycheckc.exe
 Sanity testing C compiler: arm-none-eabi-gcc
 Is cross compiler: True.
-Sanity check compiler command line: arm-none-eabi-gcc -c /Users/Luppy/newlib/build-arm-none-eabi/meson-private/sanitycheckc.c -o /Users/Luppy/newlib/build-arm-none-eabi/meson-private/sanitycheckc_cross.exe
+Sanity check compiler command line: arm-none-eabi-gcc -c /Users/Luppy/codal-libopencm3/lib/newlib/build-arm-none-eabi/meson-private/sanitycheckc.c -o /Users/Luppy/codal-libopencm3/lib/newlib/build-arm-none-eabi/meson-private/sanitycheckc_cross.exe
 Sanity check compile stdout:
 
 -----
@@ -45,8 +44,8 @@ arm-none-eabi
 
 Message: Computed host_cpu as arm
 Running compile:
-Working directory:  /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmp58ddaaxl
-Command line:  arm-none-eabi-gcc /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmp58ddaaxl/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -c -o /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmp58ddaaxl/output.obj -O0 -Werror 
+Working directory:  /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmpooy6a_2v
+Command line:  arm-none-eabi-gcc /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmpooy6a_2v/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -c -o /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmpooy6a_2v/output.obj -O0 -Werror 
 
 Code:
  
@@ -58,8 +57,8 @@ Compiler stderr:
  
 Compiler for C supports function attribute alias: YES
 Running compile:
-Working directory:  /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmpghd09u30
-Command line:  arm-none-eabi-gcc /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmpghd09u30/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -c -o /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmpghd09u30/output.obj -O0 -std=gnu99 
+Working directory:  /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmp_nfmnc7g
+Command line:  arm-none-eabi-gcc /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmp_nfmnc7g/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -c -o /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmp_nfmnc7g/output.obj -O0 -std=gnu99 
 
 Code:
  
@@ -104,8 +103,8 @@ thumb/v8-m.main/fpv5/hard;@mthumb@march=armv8-m.main@mfpu=fpv5-d16@mfloat-abi=ha
 
 
 Running compile:
-Working directory:  /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmprpq6l0a8
-Command line:  arm-none-eabi-gcc /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmprpq6l0a8/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -c -o /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmprpq6l0a8/output.obj -O0 -fno-tree-loop-distribute-patterns 
+Working directory:  /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmp6jicwq97
+Command line:  arm-none-eabi-gcc /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmp6jicwq97/testfile.c -pipe -D_FILE_OFFSET_BITS=64 -c -o /var/folders/gp/jb0b68fn3b187mgyyrjml3km0000gn/T/tmp6jicwq97/output.obj -O0 -fno-tree-loop-distribute-patterns 
 
 Code:
  int i;
@@ -225,7 +224,7 @@ a hard error in the future.
 WARNING: Target "thumb_v8_m_main_fpv5_hard/libm" has a path separator in its name.
 This is not supported, it can cause unexpected failures and will become
 a hard error in the future.
-Build targets in project: 399
+Build targets in project: 418
 Option buildtype is: plain [default: debugoptimized]
 Found ninja-1.8.2 at /usr/local/bin/ninja
 WARNING: Cross file does not specify strip binary, result will not be stripped.
