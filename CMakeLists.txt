@@ -1,5 +1,6 @@
 # Build newlib with smallest size for Cortex-M3.  This script must be run at the top level e.g. ./scripts/build.sh.
 # Warning: ALl builds will use newlib libc and libm instead of standard C libraries. To check output: ar -t build/libnewlib.a
+# cmake version in Yotta Docker image in 3.8.2.
 project(newlib)
 
 # enable verbose log. Must be after project()
@@ -25,27 +26,27 @@ string(REPLACE " -lgcc " " " CMAKE_CXX_LINK_EXECUTABLE ${CMAKE_CXX_LINK_EXECUTAB
 string(REPLACE " --specs=nano.specs " " " CMAKE_CXX_LINK_EXECUTABLE ${CMAKE_CXX_LINK_EXECUTABLE})
 
 # exclude standard C libraries. We will use newlib.
-string(JOIN " " CMAKE_CXX_LINK_EXECUTABLE
-    "${CMAKE_CXX_LINK_EXECUTABLE}"
-    "-nostdlib"
-    "-Wl,-wrap,__aeabi_d2f"
-    "-Wl,-wrap,__aeabi_d2iz"
-    "-Wl,-wrap,__aeabi_d2uiz"
-    "-Wl,-wrap,__aeabi_dadd"
-    "-Wl,-wrap,__aeabi_dcmpeq"
-    "-Wl,-wrap,__aeabi_dcmpge"
-    "-Wl,-wrap,__aeabi_dcmpgt"
-    "-Wl,-wrap,__aeabi_dcmple"
-    "-Wl,-wrap,__aeabi_dcmplt"
-    "-Wl,-wrap,__aeabi_dcmpun"
-    "-Wl,-wrap,__aeabi_ddiv"
-    "-Wl,-wrap,__aeabi_dmul"
-    "-Wl,-wrap,__aeabi_dsub"
-    "-Wl,-wrap,__aeabi_f2d"
-    "-Wl,-wrap,__aeabi_fdiv"
-    "-Wl,-wrap,__aeabi_i2d"
-    "-Wl,-wrap,__aeabi_ui2d"
-    "-Wl,-wrap,__powidf2"
+string(CONCAT CMAKE_CXX_LINK_EXECUTABLE
+    "${CMAKE_CXX_LINK_EXECUTABLE} "
+    "-nostdlib "
+    "-Wl,-wrap,__aeabi_d2f "
+    "-Wl,-wrap,__aeabi_d2iz "
+    "-Wl,-wrap,__aeabi_d2uiz "
+    "-Wl,-wrap,__aeabi_dadd "
+    "-Wl,-wrap,__aeabi_dcmpeq "
+    "-Wl,-wrap,__aeabi_dcmpge "
+    "-Wl,-wrap,__aeabi_dcmpgt "
+    "-Wl,-wrap,__aeabi_dcmple "
+    "-Wl,-wrap,__aeabi_dcmplt "
+    "-Wl,-wrap,__aeabi_dcmpun "
+    "-Wl,-wrap,__aeabi_ddiv "
+    "-Wl,-wrap,__aeabi_dmul "
+    "-Wl,-wrap,__aeabi_dsub "
+    "-Wl,-wrap,__aeabi_f2d "
+    "-Wl,-wrap,__aeabi_fdiv "
+    "-Wl,-wrap,__aeabi_i2d "
+    "-Wl,-wrap,__aeabi_ui2d "
+    "-Wl,-wrap,__powidf2 "
 )
 # set(CMAKE_CXX_LINK_EXECUTABLE "${CMAKE_CXX_LINK_EXECUTABLE} -nostdlib -Wl,-wrap,__aeabi_d2f" PARENT_SCOPE)
 set(CMAKE_CXX_LINK_EXECUTABLE "${CMAKE_CXX_LINK_EXECUTABLE}" PARENT_SCOPE)
