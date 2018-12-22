@@ -84,10 +84,14 @@ set(
 # RECURSIVE_FIND_FILE(NEWLIB_SRC "${NEWLIB_LIB}" "*.o")
 # uncomment to build libc only
 RECURSIVE_FIND_FILE(NEWLIB_SRC "${NEWLIB_LIB}/libc" "*.o")
+
+# omit mallocr and realloc because codal has its own allocator
 list(
     REMOVE_ITEM 
     NEWLIB_SRC
     "${NEWLIB_LIB}/libc/stdlib/96a2987@@stdlibthumb_v7_m@sta/mallocr.c.o"
+    "${NEWLIB_LIB}/libc/stdlib/96a2987@@stdlibthumb_v7_m@sta/realloc.c.o"
+    "${NEWLIB_LIB}/libc/stdlib/96a2987@@stdlibthumb_v7_m@sta/reallocf.c.o"
 )
 
 set(
