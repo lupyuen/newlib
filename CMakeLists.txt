@@ -84,6 +84,11 @@ set(
 # RECURSIVE_FIND_FILE(NEWLIB_SRC "${NEWLIB_LIB}" "*.o")
 # uncomment to build libc only
 RECURSIVE_FIND_FILE(NEWLIB_SRC "${NEWLIB_LIB}/libc" "*.o")
+list(
+    REMOVE_ITEM 
+    NEWLIB_SRC
+    "${NEWLIB_LIB}/libc/stdlib/96a2987@@stdlibthumb_v7_m@sta/mallocr.c.o"
+)
 
 set(
     TOP_LEVEL_SOURCE_FILES
@@ -93,7 +98,7 @@ set(
 
 # create newlib target.
 add_library(newlib ${TOP_LEVEL_SOURCE_FILES})
-# message("TOP_LEVEL_SOURCE_FILES: ${TOP_LEVEL_SOURCE_FILES}")
+message("TOP_LEVEL_SOURCE_FILES: ${TOP_LEVEL_SOURCE_FILES}")
 
 ###############################################################################
 # global settings
