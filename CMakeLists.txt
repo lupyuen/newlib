@@ -30,6 +30,22 @@ string(JOIN " " CMAKE_CXX_LINK_EXECUTABLE
     "-nostdlib"
     "-Wl,-wrap,__aeabi_d2f"
     "-Wl,-wrap,__aeabi_d2iz"
+    "-Wl,-wrap,__aeabi_d2uiz"
+    "-Wl,-wrap,__aeabi_dadd"
+    "-Wl,-wrap,__aeabi_dcmpeq"
+    "-Wl,-wrap,__aeabi_dcmpge"
+    "-Wl,-wrap,__aeabi_dcmpgt"
+    "-Wl,-wrap,__aeabi_dcmple"
+    "-Wl,-wrap,__aeabi_dcmplt"
+    "-Wl,-wrap,__aeabi_dcmpun"
+    "-Wl,-wrap,__aeabi_ddiv"
+    "-Wl,-wrap,__aeabi_dmul"
+    "-Wl,-wrap,__aeabi_dsub"
+    "-Wl,-wrap,__aeabi_f2d"
+    "-Wl,-wrap,__aeabi_fdiv"
+    "-Wl,-wrap,__aeabi_i2d"
+    "-Wl,-wrap,__aeabi_ui2d"
+    "-Wl,-wrap,__powidf2"
 )
 # set(CMAKE_CXX_LINK_EXECUTABLE "${CMAKE_CXX_LINK_EXECUTABLE} -nostdlib -Wl,-wrap,__aeabi_d2f" PARENT_SCOPE)
 set(CMAKE_CXX_LINK_EXECUTABLE "${CMAKE_CXX_LINK_EXECUTABLE}" PARENT_SCOPE)
