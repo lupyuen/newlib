@@ -25,11 +25,12 @@ string(REPLACE " -lgcc " " " CMAKE_CXX_LINK_EXECUTABLE ${CMAKE_CXX_LINK_EXECUTAB
 # Remove "--specs=nano.specs" because it links in _malloc_r from nano-mallocr.c.
 string(REPLACE " --specs=nano.specs " " " CMAKE_CXX_LINK_EXECUTABLE ${CMAKE_CXX_LINK_EXECUTABLE})
 
-# exclude standard C libraries. We will use newlib.
 string(CONCAT CMAKE_CXX_LINK_EXECUTABLE
     "${CMAKE_CXX_LINK_EXECUTABLE} "
+    # exclude standard C libraries. We will use newlib.
     "-nostdlib "
-    "-Wl,-wrap,__aeabi_d2f "
+    # wrap the __aeabi functions in gcc to become __wrap___aeabi so that we can rewrite them.
+    # "-Wl,-wrap,__aeabi_d2f "
     "-Wl,-wrap,__aeabi_d2iz "
     "-Wl,-wrap,__aeabi_d2uiz "
     "-Wl,-wrap,__aeabi_dadd "
@@ -42,11 +43,13 @@ string(CONCAT CMAKE_CXX_LINK_EXECUTABLE
     "-Wl,-wrap,__aeabi_ddiv "
     "-Wl,-wrap,__aeabi_dmul "
     "-Wl,-wrap,__aeabi_dsub "
-    "-Wl,-wrap,__aeabi_f2d "
+    # "-Wl,-wrap,__aeabi_f2d "
     "-Wl,-wrap,__aeabi_fdiv "
     "-Wl,-wrap,__aeabi_i2d "
     "-Wl,-wrap,__aeabi_ui2d "
-    "-Wl,-wrap,__powidf2 "
+    # "-Wl,-wrap,__powidf2 "
+    # for unwrapped __aeabi functions, link with libgcc.a.
+    "-lgcc "
 )
 set(CMAKE_CXX_LINK_EXECUTABLE "${CMAKE_CXX_LINK_EXECUTABLE}" PARENT_SCOPE)  # Share to parent scope
 message("CMAKE_CXX_LINK_EXECUTABLE after: ${CMAKE_CXX_LINK_EXECUTABLE}")
