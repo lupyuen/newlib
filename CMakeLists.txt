@@ -48,8 +48,7 @@ string(CONCAT CMAKE_CXX_LINK_EXECUTABLE
     "-Wl,-wrap,__aeabi_ui2d "
     "-Wl,-wrap,__powidf2 "
 )
-# set(CMAKE_CXX_LINK_EXECUTABLE "${CMAKE_CXX_LINK_EXECUTABLE} -nostdlib -Wl,-wrap,__aeabi_d2f" PARENT_SCOPE)
-set(CMAKE_CXX_LINK_EXECUTABLE "${CMAKE_CXX_LINK_EXECUTABLE}" PARENT_SCOPE)
+set(CMAKE_CXX_LINK_EXECUTABLE "${CMAKE_CXX_LINK_EXECUTABLE}" PARENT_SCOPE)  # Share to parent scope
 message("CMAKE_CXX_LINK_EXECUTABLE after: ${CMAKE_CXX_LINK_EXECUTABLE}")
 
 ###############################################################################
