@@ -33,7 +33,7 @@ string(CONCAT CMAKE_CXX_LINK_EXECUTABLE
     # "-Wl,-wrap,__aeabi_d2f "
     "-Wl,-wrap,__aeabi_d2iz "
     "-Wl,-wrap,__aeabi_d2uiz "
-    # "-Wl,-wrap,__aeabi_dadd "
+    "-Wl,-wrap,__aeabi_dadd "
     "-Wl,-wrap,__aeabi_dcmpeq "
     "-Wl,-wrap,__aeabi_dcmpge "
     "-Wl,-wrap,__aeabi_dcmpgt "
@@ -42,13 +42,21 @@ string(CONCAT CMAKE_CXX_LINK_EXECUTABLE
     "-Wl,-wrap,__aeabi_dcmpun "
     "-Wl,-wrap,__aeabi_ddiv "
     "-Wl,-wrap,__aeabi_dmul "
-    # "-Wl,-wrap,__aeabi_dsub "
+    "-Wl,-wrap,__aeabi_dsub "
     # "-Wl,-wrap,__aeabi_f2d "
+    "-Wl,-wrap,__aeabi_fadd "
     "-Wl,-wrap,__aeabi_fdiv "
+    "-Wl,-wrap,__aeabi_fmul "
+    "-Wl,-wrap,__aeabi_fsub "
     # "-Wl,-wrap,__aeabi_i2d "
     # "-Wl,-wrap,__aeabi_ui2d "
     # "-Wl,-wrap,__powidf2 "
     # for unwrapped __aeabi functions, link with libgcc.a.
+    # wrap the gcc floating-point functions.
+    "-Wl,-wrap,__addsf3 "
+    "-Wl,-wrap,__divsf3 "
+    "-Wl,-wrap,__mulsf3 "
+    "-Wl,-wrap,__subsf3 "
     "-lgcc "
 )
 set(CMAKE_CXX_LINK_EXECUTABLE "${CMAKE_CXX_LINK_EXECUTABLE}" PARENT_SCOPE)  # Share to parent scope
