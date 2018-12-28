@@ -5,24 +5,27 @@
 
 #pragma once
 
+//  To remove impure_data, we must define both REENTRANT_SYSCALLS_PROVIDED and MISSING_SYSCALL_NAMES
+
+/* Reentrant syscalls provided for us */
+#define REENTRANT_SYSCALLS_PROVIDED
+//  Previously: #undef REENTRANT_SYSCALLS_PROVIDED
+
+/* use regular syscalls */
+#define MISSING_SYSCALL_NAMES
+//  Previously: #undef MISSING_SYSCALL_NAMES
+
+/* Optimize for space over speed */
+#define PREFER_SIZE_OVER_SPEED
+
 #define HAVE_ALIAS_ATTRIBUTE
 
 /* Compiler has long double type */
 #undef HAVE_LONG_DOUBLE
 // #define HAVE_LONG_DOUBLE
 
-/* use regular syscalls */
-#undef MISSING_SYSCALL_NAMES
-
 /* use global errno variable */
 #undef NEWLIB_GLOBAL_ERRNO
-
-/* Optimize for space over speed */
-#define PREFER_SIZE_OVER_SPEED
-
-/* Reentrant syscalls provided for us */
-#define REENTRANT_SYSCALLS_PROVIDED
-//  #undef REENTRANT_SYSCALLS_PROVIDED
 
 /* Use tiny stdio from gcc avr */
 #undef TINY_STDIO
