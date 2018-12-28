@@ -8,7 +8,8 @@
 #define HAVE_ALIAS_ATTRIBUTE
 
 /* Compiler has long double type */
-#define HAVE_LONG_DOUBLE
+#undef HAVE_LONG_DOUBLE
+// #define HAVE_LONG_DOUBLE
 
 /* use regular syscalls */
 #undef MISSING_SYSCALL_NAMES
@@ -20,7 +21,8 @@
 #define PREFER_SIZE_OVER_SPEED
 
 /* Reentrant syscalls provided for us */
-#undef REENTRANT_SYSCALLS_PROVIDED
+#define REENTRANT_SYSCALLS_PROVIDED
+//  #undef REENTRANT_SYSCALLS_PROVIDED
 
 /* Use tiny stdio from gcc avr */
 #undef TINY_STDIO
