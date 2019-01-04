@@ -6,11 +6,17 @@ ARCH=arm-none-eabi
 DIR=..
 echo "meson dir: ${DIR}"
     
-# Enable verbose build for cmake in docker.
 if [ -d /home/build ]; then
+    # Enable verbose build for cmake in docker.
     echo Setting VERBOSE=1 in /home/build/.profile and .bashrc
     echo export VERBOSE=1 >> /home/build/.profile
     echo export VERBOSE=1 >> /home/build/.bashrc
+else
+    # If not using docker, comment out the "pool console" statement in build.ninja.
+    if [ -f build-arm-none-eabi/build.ninja ]; then
+        cp build-arm-none-eabi/build.ninja build-arm-none-eabi/build.ninja.old
+        sed 's/pool console/pool NOTUSED_console/g' build-arm-none-eabi/build.ninja.old >build-arm-none-eabi/build.ninja
+    fi
 fi
 
 if [ -f build-arm-none-eabi/newlib/libc/libthumb_v7_m/libc.a -a -f build-arm-none-eabi/newlib/libm/libthumb_v7_m/libm.a ]; then
